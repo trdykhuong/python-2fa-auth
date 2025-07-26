@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_register.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Đăng ký</title>
+</head>
+<body>
+    <h2>Đăng ký</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/register">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" name="username" required><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="password" name="password" required><br>
+
+        <div class="button-container">
+            <button type="submit">Đăng ký</button>
+            <a href="/" class="back-button">Quay lại</a>
+        </div>
+    </form>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+
+</body>
+</html>

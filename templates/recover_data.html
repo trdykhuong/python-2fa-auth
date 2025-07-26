@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khôi Phục Dữ Liệu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_backup.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Khôi Phục Dữ Liệu</h2>
+        <p>Nhập tên tài khoản cũ và khóa backup để khôi phục dữ liệu.</p>
+        <form method="POST" action="/recover_data">
+            <label for="old_username">Tên tài khoản cũ:</label>
+            <input type="text" name="old_username" id="old_username" required>
+
+            <label for="backup_key">Khóa Backup:</label>
+            <input type="text" name="backup_key" id="backup_key" required>
+
+            <button type="submit" class="submit-button">Khôi phục dữ liệu</button>
+        </form>
+        <a href="/password_manager" class="cancel-button">Quay lại</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Password Manager</title>
+</head>
+<body>
+    <h1>Hệ thống quản lý mật khẩu</h1>
+    <p><a href="/register">Đăng ký</a> | <a href="/login">Đăng nhập</a></p>
+
+    <!-- Dòng hỗ trợ bởi Google -->
+    <footer>
+        <p class="support-text">
+            <span>Support by </span>
+            <img src="{{ url_for('static', filename='images/google.png') }}" alt="Google Logo" class="google-logo">
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+</body>
+</html>

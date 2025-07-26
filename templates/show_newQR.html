@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Mã QR Mới</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_shownewQR.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <h2>Mã QR Mới</h2>
+        <p>Quét mã QR này trong ứng dụng Google Authenticator để cập nhật thiết bị.</p>
+        <img src="data:image/png;base64,{{ qr_code }}" alt="Mã QR">
+        <p>Sau khi quét mã QR, vui lòng <a href="/login">nhấn vào đây để đăng nhập bằng thiết bị mới.</a>.</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+
+</body>
+</html>

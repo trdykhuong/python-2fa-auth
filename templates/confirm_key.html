@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác Nhận Backup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_backup.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Xác Nhận Backup</h2>
+        <p>Bạn đã lưu khóa backup của mình chưa? Hãy chắc chắn rằng bạn đã lưu lại trước khi xác nhận.</p>
+
+        <form method="POST" action="/confirm_backup_key">
+            <button type="submit" class="confirm-button">Xác nhận</button>
+        </form>
+        <a href="/backup_data" class="cancel-button">Quay lại để lưu khóa</a>
+    </div>
+</body>
+
+</html>

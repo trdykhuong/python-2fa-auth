@@ -1,0 +1,150 @@
+/* CSS cho trang mất thiết bị */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Nút chính */
+button, .cancel-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px; /* Đảm bảo padding giống nhau */
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px; /* Đồng nhất border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Nút Xác nhận */
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Nút Quay lại */
+.cancel-button {
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+/* Flash messages */
+ul.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+ul.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+ul.flashes li.success {
+    background-color: #28a745;
+}
+
+ul.flashes li.danger {
+    background-color: #dc3545;
+}
+
+ul.flashes li.info {
+    background-color: #17a2b8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button, .cancel-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+.flashes li.success {
+    background-color: #28a745;
+}
+
+.flashes li.danger {
+    background-color: #dc3545;
+}
+
+.flashes li.info {
+    background-color: #17a2b8;
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

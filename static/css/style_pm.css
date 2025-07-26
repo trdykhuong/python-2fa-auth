@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ====Sidebar==== */
+.sidebar {
+    left: 0;
+    top: 0;
+    width: 78px;
+    height: 100%;
+    padding: 6px 14px;
+    z-index: 99;
+    position: fixed;
+    background: #1B1A55;
+    transition: all 0.7s ease;
+}
+.sidebar.open {
+    width: 280px;
+}
+.sidebar .logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+.sidebar .logo-details .icon {
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+.logo-details img {
+    width: 50px;
+}
+.sidebar .logo-details .logo-name {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo-name {
+    opacity: 1;
+}
+.sidebar .logo-details #btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: all 0.4s ease;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn {
+    text-align: right;
+}
+.sidebar i {
+    color: #fff;
+    height: 60px;
+    min-width: 50px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 60px;
+}
+.sidebar .nav-list {
+    margin-top: 20px;
+    height: 100%;
+}
+.sidebar li {
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+}
+.sidebar li .tooltip {
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0s;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.sidebar li:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    top: 50%;
+    transition: all 0.4s ease;
+    transform: translateY(-50%);
+}
+.sidebar.open li .tooltip {
+    display: none;
+}
+.sidebar li a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.7s ease;
+}
+.sidebar li a:hover {
+    background: #466EB4;
+    cursor: pointer;
+}
+.sidebar li a .links-name {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+.sidebar.open li a .links-name {
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar li a:hover .links-name,
+.sidebar li a:hover i {
+    transition: all 0.5s ease;
+    color: #11101D;
+    font-weight: bold;
+}
+.sidebar li a:hover .links-name {
+    font-size: 17px;
+}
+.sidebar li i {
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+}
+.sidebar li.log-out {
+    position: fixed;
+    height: 60px;
+    width: 78px;
+    left: 0;
+    bottom: -8px;
+    padding: 10px 14px;
+    background: #466EB4;
+    transition: all 0.7s ease;
+    overflow: hidden;
+}
+.sidebar.open li.log-out {
+    width: 280px;
+    background: #1B1A55;
+}
+.sidebar .log-out #log-out {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #121139;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 0px;
+    transition: all 0.7s ease;
+}
+.sidebar .log-out #log-out:hover,
+.sidebar li.log-out:hover {
+    font-size: 28px;
+    background: #466EB4;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.sidebar.open li.log-out i {
+    color: #fff;
+}
+.sidebar.open li.log-out i:hover {
+    color: #1B1A55;
+}
+.sidebar.open .log-out #log-out {
+    width: 280px;
+    background: #121139;
+}
+.sidebar.open .log-out #log-out:hover {
+    width: 280px;
+    background: #466EB4;
+}
+
+/* ====Home Section==== */
+.home-section{
+    position: relative;
+    z-index: 2;
+    top: 0;
+    left: 78px;
+    min-height: 100vh;
+    width: calc(100% - 78px);
+    background: black;
+    transition: all 0.7s ease;
+}
+.sidebar.open ~ .home-section{
+    left: 280px;
+    width: calc(100% - 280px);
+}
+
+/* ___Header Section___ */
+.head-section{
+    height: 10vh;
+    padding: 0px 30px 0px 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+table {
+    border: 1px solid #BEDBED;
+    margin: 0px 10px 0px 10px ;
+    width: calc(100% - 20px);
+    border-collapse: collapse;
+}
+th, td {
+    border-bottom: 1px solid #BEDBED;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #DBE9F2;
+    font-size: 18px;   
+}
+.pagination-controls {
+    margin-top: 10px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    position: fixed;
+    bottom: 5px
+}
+.pagination-controls .page-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+}
+.pagination-controls .page-button:hover {
+    background-color: #ddd;
+}
+.pagination-controls .page-button:focus {
+    outline: none;
+}
+
+/* ___Form Mail Received___ */
+.form-mail-received {
+    position: absolute;
+    background: #fff;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    height: 90vh;
+    top: 10vh;
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.form-mail-received.active {
+    opacity: 1;
+    visibility: visible;
+    scale: 1;
+}
+.form-container h3 {
+    color: #333;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 28px;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.row-1 {
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row-1 label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.row-1 input {
+    width: 340px;
+    margin-left: 20px;
+}
+.row-1 input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+/* ___Form Mail Send___ */
+.form-mail-send {
+    position: absolute;
+    background: #fff;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    height: 90vh;
+    top: 10vh;
+    z-index: 91;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.form-mail-send.active {
+    opacity: 1;
+    visibility: visible;
+    scale: 1;
+}
+.form-mail-send h3 {
+    color: #333;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 28px;
+}
+.edit-button {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #007bff; /* Đường viền cho nút sửa */
+}
+
+.edit-button:hover {
+    background-color: #007bff;
+    color: white; /* Đổi màu chữ khi hover */
+}
+/* ___Reponsive___ */
+@media (max-width: 420px) {
+    .sidebar li .tooltip{
+        display: none;
+    }
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #f5f4f4;
+}
+
+.cancel-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cancel-button:hover {
+    background-color: #c0392b;
+}
+
+.safe-mode-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.safe-mode-button:hover {
+    background-color: #d35400;
+}
+/* Định dạng bảng mật khẩu */
+.password-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.password-table th,
+.password-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.password-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style cho các nút */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+.password-field {
+    border: none;
+}
+.password-field:hover {
+    outline: none;
+}
+.footer{
+    text-align: center;
+}
+.form-face-id {
+    position: absolute;
+    background: #fff;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    height: 90vh;
+    top: 10vh;
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-face-id.active {
+    opacity: 1;
+    visibility: visible;
+    scale: 1;
+}
+
+.form-face-id .form-container h3 {
+    color: #333;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 28px;
+}
+
+#password-strength {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    height: 20px;
+    width: 360px;
+}
+
+.flashes {
+    list-style: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.flashes li {
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Màu sắc cho từng loại thông báo */
+.flashes li.success {
+    background-color: #28a745;
+}
+
+.flashes li.danger {
+    background-color: #dc3545;
+}
+
+.flashes li.info {
+    background-color: #17a2b8;
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+

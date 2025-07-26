@@ -1,0 +1,106 @@
+/* Đặt style chung cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Container chính */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 40px; /* Để khoảng cách lớn hơn phía dưới tiêu đề */
+}
+
+/* Style cho các liên kết đăng ký và đăng nhập */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+/* Thêm hiệu ứng hover */
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Đặt khoảng cách giữa các phần tử */
+.links p {
+    margin-top: 20px;
+}
+
+/* Đặt style cho tiêu đề */
+h1 {
+    font-size: 2.5rem;
+    color: #222;
+}
+
+/* Style cho liên kết khi trong trạng thái nhấn */
+a:active {
+    background-color: #004080;
+}
+
+/* Đảm bảo trang có độ phản hồi tốt */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+.flashes li.success {
+    background-color: #28a745;
+}
+
+.flashes li.danger {
+    background-color: #dc3545;
+}
+
+.flashes li.info {
+    background-color: #17a2b8;
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.support-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+.support-text img.google-logo {
+    width: 80px;
+    height: auto;
+    margin-left: 5px;
+    vertical-align: middle;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Thay đổi thiết bị</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_change_device.css') }}">
+    <script>
+        setTimeout(function () {
+            var flashes = document.querySelector('.flashes');
+            if (flashes) {
+                flashes.style.display = 'none';
+            }
+        }, 3000); 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Thay đổi thiết bị</h2>
+        <p>Vui lòng nhập mật khẩu và mã OTP hiện tại để tiếp tục.</p>
+        <form method="POST" action="/change_device">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" name="password" required>
+            <label for="otp">Mã OTP:</label>
+            <input type="text" name="otp" required>
+            <button type="submit">Xác nhận</button>
+            <a href="/password_manager" class="cancel-button">Hủy</a>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_tsm.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Bật/Tắt chế độ an toàn</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Bật/Tắt chế độ an toàn</h2>
+        <p>Nhập mã OTP để xác thực và cập nhật chế độ an toàn.</p>
+        <form method="POST" action="/toggle_safe_mode">
+            <label for="otp">Mã OTP</label>
+            <input type="text" name="otp" required><br>
+
+            <button type="submit">Xác nhận</button>
+            <a href="/password_manager" class="cancel-button">Hủy</a>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+
+</body>
+</html>

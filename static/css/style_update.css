@@ -1,0 +1,120 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Đặt style cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container chính */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px; /* Đặt chiều rộng cho container */
+}
+
+/* Tiêu đề chính */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Style cho form */
+form {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+/* Style cho nhãn và input */
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Container cho các nút */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Chia khoảng cách giữa các nút */
+}
+
+/* Style cho nút cập nhật */
+.update-button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1; /* Chiếm không gian còn lại */
+}
+
+.update-button:hover {
+    background-color: #218838;
+}
+
+/* Style cho nút quay lại */
+.back-button {
+    display: inline-block;
+    margin-left: 10px; /* Để tạo khoảng cách giữa hai nút */
+    padding: 10px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Đảm bảo trang có độ phản hồi tốt */
+@media (max-width: 600px) {
+    .container {
+        width: 100%; /* Đặt lại chiều rộng cho màn hình nhỏ */
+    }
+}
+
+.flashes li.success {
+    background-color: #28a745;
+}
+
+.flashes li.danger {
+    background-color: #dc3545;
+}
+
+.flashes li.info {
+    background-color: #17a2b8;
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_login.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <h2>Đăng nhập</h2>
+
+        <!-- Form Đăng nhập -->
+        <form method="POST" action="/login">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" name="username" placeholder="Nhập tên đăng nhập" required>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+
+            <label for="otp">Mã OTP:</label>
+            <input type="text" name="otp" placeholder="Nhập mã OTP" required>
+
+            <div class="button-container">
+                <button type="submit">Đăng nhập</button>
+                <a href="/register" class="register-button">Đi đến đăng ký</a>
+            </div>
+        </form>
+
+        <!-- Các liên kết hỗ trợ -->
+        <div class="extra-links">
+            <p class="forgot-password">
+                <a href="/forgot_password">Quên mật khẩu?</a>
+            </p>
+            <p class="lost-device">
+                <a href="/recover_device">Mất thiết bị?</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Script để ẩn flash messages -->
+    <script>
+        setTimeout(function () {
+            var flashes = document.querySelector('.flashes');
+            if (flashes) {
+                flashes.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+        <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+</body>
+
+</html>

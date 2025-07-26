@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_qr.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Mã QR</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Quét mã QR bằng Google Authenticator</h2>
+        
+        <!-- Hình ảnh minh họa Google Authenticator -->
+        <div class="authenticator-app">
+            <img src="{{ url_for('static', filename='images/Google_Authenticator.png') }}" 
+                 alt="Google Authenticator" 
+                 class="app-icon">
+        </div>
+
+        <!-- Hình ảnh mã QR -->
+        <div class="qr-code-container">
+            <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+        </div>
+
+        <p class="username">Tên đăng nhập của bạn: {{ username }}</p>
+
+        <!-- Thêm một đường dẫn đến trang đăng nhập -->
+        <p>Sau khi quét mã QR, bạn có thể <a href="/login">nhấn vào đây để đăng nhập</a>.</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+</body>
+</html>

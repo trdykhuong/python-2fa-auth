@@ -1,0 +1,8 @@
+Flask==2.0.2
+pyotp==2.6.0
+qrcode==7.3.1
+Pillow==8.4.0
+bcrypt==3.2.0
+pycryptodome==3.11.0
+Werkzeug==2.0.2
+flask-bcrypt==0.7.1

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/okhoa2.jpg') }}" type="image/x-icon">
+    <title>Mất thiết bị</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_forgot_device.css') }}">
+</head>
+<script>
+    setTimeout(function () {
+        var flashes = document.querySelector('.flashes');
+        if (flashes) {
+            flashes.style.display = 'none';
+        }
+    }, 3000); 
+</script>
+
+<body>
+    
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+        <h2>Mất thiết bị</h2>
+        <p>Vui lòng nhập thông tin tài khoản và mật khẩu để lấy lại quyền truy cập.</p>
+        <form method="POST" action="/recover_device">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" name="username" required>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Xác nhận</button>
+            <a href="/login" class="cancel-button">Quay lại</a>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/thongbao.js') }}"></script>
+
+</body>
+
+</html>

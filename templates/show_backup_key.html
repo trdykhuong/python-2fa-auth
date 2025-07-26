@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Backup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_backup.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Khóa Backup</h2>
+        <p>Vui lòng lưu khóa dưới đây để có thể khôi phục dữ liệu của bạn trong tương lai.</p>
+
+        <div class="backup-key">
+            {% if backup_key %}
+                <strong>{{ backup_key }}</strong>
+            {% else %}
+                <p style="color: red;">Không tìm thấy khóa backup!</p>
+            {% endif %}
+        </div>
+
+        <h3>Các bản sao lưu đã tạo:</h3>
+        <ul>
+            {% for backup in backups %}
+                <li>
+                    <form method="POST" action="/delete_backup/{{ backup[0] }}" style="display:inline;">
+                        <strong>Bản sao lưu ID: {{ backup[0] }}</strong> - 
+                        <em>(Nội dung đã mã hóa)</em>
+                        <button type="submit" class="delete-button">Xóa</button>
+                    </form>
+                </li>
+            {% else %}
+                <li>Không có bản sao lưu nào được tạo.</li>
+            {% endfor %}
+        </ul>
+
+        <p style="color: red;">Lưu ý: Bạn chỉ có thể giữ lại một bản sao lưu duy nhất để khôi phục!</p>
+        <a href="/password_manager">
+            <button type="button" class="confirm-button">Tôi đã lưu khóa</button>
+        </a>
+        <a href="/password_manager" class="cancel-button">Quay lại</a>
+    </div>
+</body>
+</html>
